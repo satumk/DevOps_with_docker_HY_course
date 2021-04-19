@@ -1,0 +1,28 @@
+satumkorhonen@ECTURWSKOR1 part1 % docker container run -it -d --name ex4 ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+a70d879fa598: Pull complete 
+c4394a92d1f8: Pull complete 
+10e6159c56c0: Pull complete 
+Digest: sha256:3c9c713e0979e9bd6061ed52ac1e9e1f246c9495aa063619d9d695fb8039aa1f
+Status: Downloaded newer image for ubuntu:latest
+9ddd5ab91ddc70bc4ab5471e98cbcc5d7e0d07e44fc0caf6f7562cf5c7957e2e
+satumkorhonen@ECTURWSKOR1 part1 % docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                   CREATED         STATUS         PORTS     NAMES
+9ddd5ab91ddc   ubuntu    "sh -c 'echo \"Input …"   8 seconds ago   Up 7 seconds             ex4
+satumkorhonen@ECTURWSKOR1 part1 % docker exec -it ex4 bash
+root@9ddd5ab91ddc:/# apt update
+Apt upgrade
+Apt install curl
+root@9ddd5ab91ddc:/# exit
+exit
+satumkorhonen@ECTURWSKOR1 part1 % docker attach ex4      
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>

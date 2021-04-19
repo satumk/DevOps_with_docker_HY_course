@@ -1,0 +1,39 @@
+satumkorhonen@ECTURWSKOR1 part1 % docker run -it -d --name ex3 devopsdockeruh/simple-web-service:ubuntu
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+26c584925d1a39a26d02486efa86573013a4c558a02c5c0920903c5e9664057f
+satumkorhonen@ECTURWSKOR1 part1 % docker container ls -a
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES
+26c584925d1a   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   12 seconds ago   Up 11 seconds             ex3
+satumkorhonen@ECTURWSKOR1 part1 % docker exec -it ex3 bash
+root@26c584925d1a:/usr/src/app# tail -f ./text.log
+2021-04-18 16:48:17 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-04-18 16:48:19 +0000 UTC
+2021-04-18 16:48:21 +0000 UTC
+2021-04-18 16:48:23 +0000 UTC
+2021-04-18 16:48:25 +0000 UTC
+2021-04-18 16:48:27 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-04-18 16:48:29 +0000 UTC
+2021-04-18 16:48:31 +0000 UTC
+2021-04-18 16:48:33 +0000 UTC
+2021-04-18 16:48:35 +0000 UTC
+2021-04-18 16:48:37 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-04-18 16:48:39 +0000 UTC
+2021-04-18 16:48:41 +0000 UTC
+2021-04-18 16:48:43 +0000 UTC
+2021-04-18 16:48:45 +0000 UTC
+^C
+root@26c584925d1a:/usr/src/app# exit
+exit
+satumkorhonen@ECTURWSKOR1 part1 % 
+
